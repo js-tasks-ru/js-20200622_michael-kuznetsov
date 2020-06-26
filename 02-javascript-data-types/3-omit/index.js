@@ -6,4 +6,12 @@
  */
 export const omit = (obj, ...fields) => {
 
+	let retValue = Object.assign({},obj);
+	for (let key in fields) {
+		if (obj.hasOwnProperty(fields[key]) == true) {
+			delete retValue[fields[key]];
+		}
+	}
+	return retValue;
+
 };
