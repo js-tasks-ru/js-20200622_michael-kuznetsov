@@ -6,4 +6,9 @@
  */
 export function sortStrings(arr, param = 'lowerAsc') {
 
+	let arrTemp = Array.from(arr);
+	arrTemp.sort(function (a, b) {return a.localeCompare(b,undefined,{caseFirst:"upper"});});
+	if (param === "desc") { arrTemp.reverse();}
+	return arrTemp;
+
 }
